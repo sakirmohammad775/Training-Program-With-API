@@ -1,0 +1,69 @@
+[
+    {
+      "id": 1,
+      "name": "Web Development",
+      "image": "https://i.ibb.co/dDkk4z7/image.png",
+      "short_description": "Learn to build dynamic websites and web applications.",
+      "details": "Comprehensive training in HTML, CSS, JavaScript, and popular web frameworks.",
+      "price": "$499",
+      "title": "Full Stack Web Development",
+      "training_programme_name": "Coding Academy",
+      "services": ["Frontend Development", "Backend Development", "Database Management"]
+    },
+    {
+      "id": 2,
+      "name": "UI/UX Design",
+      "image": "https://i.ibb.co/fp0tjqF/1.png",
+      "short_description": "Explore the principles of user interface and experience design.",
+      "details": "Hands-on experience with design tools and prototyping.",
+      "price": "$399",
+      "title": "UI/UX Design Bootcamp",
+      "training_programme_name": "Design Institute",
+      "services": ["User Research", "Wireframing", "Prototyping"]
+    },
+    {
+      "id": 3,
+      "name": "Digital Marketing",
+      "image": "https://i.ibb.co/NVLLrww/2.png",
+      "short_description": "Master the art of online marketing and advertising.",
+      "details": "Strategies for SEO, SEM, social media marketing, and analytics.",
+      "price": "$349",
+      "title": "Digital Marketing Masterclass",
+      "training_programme_name": "Marketing Academy",
+      "services": ["Search Engine Optimization", "Social Media Management", "Content Marketing"]
+    },
+    {
+      "id": 4,
+      "name": "Data Analyst",
+      "image": "https://i.ibb.co/fp0tjqF/1.png",
+      "short_description": "Learn to analyze and interpret complex data sets.",
+      "details": "Statistical analysis, data visualization, and business intelligence.",
+      "price": "$449",
+      "title": "Data Analytics Bootcamp",
+      "training_programme_name": "Data Science Institute",
+      "services": ["Data Cleaning", "Statistical Analysis", "Data Visualization"]
+    },
+    {
+      "id": 5,
+      "name": "Python Development",
+      "image": "https://i.ibb.co/NVLLrww/2.png",
+      "short_description": "Become proficient in Python programming.",
+      "details": "Web development, automation, and data manipulation with Python.",
+      "price": "$399",
+      "title": "Python Developer Certification",
+      "training_programme_name": "Coding Academy",
+      "services": ["Web Development with Django", "Automation Scripting", "Data Manipulation"]
+    },
+    {
+      "id": 6,
+      "name": "Mobile App Development",
+      "image": "https://i.ibb.co/fp0tjqF/1.png",
+      "short_description": "Create mobile applications for iOS and Android platforms.",
+      "details": "App development using React Native and Flutter frameworks.",
+      "price": "$499",
+      "title": "Mobile App Development Bootcamp",
+      "training_programme_name": "Coding Academy",
+      "services": ["React Native Development", "Flutter Development", "App Deployment"]
+    }
+  ]
+  
