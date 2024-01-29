@@ -1,9 +1,21 @@
 import { RxDropdownMenu } from "react-icons/rx";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import './navbar.css'
+import { useContext } from "react";
+import { AuthContext } from "../../Provider/AuthProvider";
 const Navbar = () => {
+    const {user,logOut}=useContext(AuthContext)
+
+    const handleLogOut=()=>{
+        logOut()
+        .then()
+        .catch();
+        
+       
+    }
+
     const navLink=<>
-        <li className="li"><NavLink>Home</NavLink></li>
+        <li className="li"><NavLink to='/'>Home</NavLink></li>
         <li className="li"><NavLink>Portfolio</NavLink></li>
         <li className="li"><NavLink>Services</NavLink></li>
         <li className="li"><NavLink>Blogs</NavLink></li>
@@ -15,7 +27,7 @@ const Navbar = () => {
             <div className="navbar static ">
                 <div className="navbar-start">
                     
-                    <a className="btn btn-ghost text-3xl">S<span className="text-red-500">M</span></a>
+                    <Link to='/' className="btn btn-ghost text-3xl">S<span className="text-red-500">M</span></Link>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="flex px-1 ">
@@ -23,7 +35,9 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn btn-ghost">Login</a>
+                    {
+                        user? <button onClick={handleLogOut}>SignOut</button>:<Link to='/login' className="btn btn-ghost">Login</Link>
+                    }
                 </div>
                 <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost text-3xl lg:hidden">
