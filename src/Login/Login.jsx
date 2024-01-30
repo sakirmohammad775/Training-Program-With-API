@@ -1,28 +1,38 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
-import { useContext } from "react";
+import { useContext, } from "react";
 
 
 const Login = () => {
 
-    const{signIn}=useContext(AuthContext)
+    const { signIn } = useContext(AuthContext)
 
-    const handleLogin=e=>{
+
+    const location = useLocation()
+    console.log(location);
+    const navigate = useNavigate()
+
+    const handleLogin = e => {
         e.preventDefault()
         console.log(e.currentTarget);
-        const form =new FormData(e.currentTarget)
+        const form = new FormData(e.currentTarget)
 
-        const email=form.get('email')
-        const password=form.get('password')
-        console.log(email,password);
+        const email = form.get('email')
+        const password = form.get('password')
+        console.log(email, password);
 
-        signIn(email,password)
-        .then(result=>{
-            console.log(result);
-        })
-        .catch(error=>{
-            console.error('no account found ot this email id',error)
-        })
+
+
+        signIn(email, password)
+            .then(result => {
+                console.log(result);
+
+                //navigate when login,this is important..when user login state found,navigate the user details,otherwise navigate to home
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.error(error)
+            })
     }
     return (
         <>
@@ -51,6 +61,7 @@ const Login = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
+
                                 <p>if you do not have an account?<Link to='/register'>Register</Link></p>
                             </div>
                         </form>

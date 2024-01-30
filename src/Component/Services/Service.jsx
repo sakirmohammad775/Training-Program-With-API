@@ -15,7 +15,7 @@ const Service = ({ service }) => {
                         <p className="font-light">{title}</p>
                         <p>{short_description}</p>
                         <div className="card-actions">
-                            <Link><u>Read More </u><i className="fa-solid fa-arrow-up-right-from-square"></i></Link>
+                            <Link to={`/services/${id}`}><u>Read More </u><i className="fa-solid fa-arrow-up-right-from-square"></i></Link>
                         </div>
                     </div>
                 </div>
