@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import app from "../Firebase/firebase.config";
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, GithubAuthProvider, } from "firebase/auth";
 
 export const AuthContext = createContext(null)
 const auth=getAuth(app)
@@ -21,6 +21,17 @@ const AuthProvider = ({children}) => {
         setLoading(true)
         return signInWithEmailAndPassword(auth,email,password);
     }
+    //google sign in
+    const googleSignIn=()=>{
+        const provider=new GoogleAuthProvider()
+        return signInWithPopup(auth,provider)
+    }
+    //github sign in
+    const githubSignIn=()=>{
+        const githubProvider=new GithubAuthProvider()
+        setUser(githubProvider)
+        return signInWithPopup(auth,githubProvider)
+    }
 
     useEffect(()=>{
        const unSubscribe =onAuthStateChanged(auth,currentUser=>{
@@ -32,13 +43,15 @@ const AuthProvider = ({children}) => {
             unSubscribe()
         }
     },[])
-
+    
     const authInfo={
         user,
         loading,
         createUser,
         signIn,
-        logOut
+        logOut,
+        googleSignIn,
+        githubSignIn
 
     }
     return (

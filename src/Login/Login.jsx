@@ -5,12 +5,35 @@ import { useContext, } from "react";
 
 const Login = () => {
 
-    const { signIn } = useContext(AuthContext)
+    const { signIn, googleSignIn,githubSignIn } = useContext(AuthContext)
 
-
+    //set location.....and navigate
     const location = useLocation()
     console.log(location);
     const navigate = useNavigate()
+
+    //set google logIn
+    const handleGoogleSignIn = () => {
+        googleSignIn()
+            .then(result => {
+                const user = result.user
+                console.log(user);
+            })
+            .catch(error => {
+                console.error(error)
+            })
+    }
+    //set github logIn
+    const handleGithubSignIn=()=>{
+        githubSignIn()
+        .then(result=>{
+            const user=result.user
+            console.log(user);
+        })
+        .catch(error=>{
+            console.error(error)
+        })
+    }
 
     const handleLogin = e => {
         e.preventDefault()
@@ -19,7 +42,7 @@ const Login = () => {
 
         const email = form.get('email')
         const password = form.get('password')
-        console.log(email, password);
+        // console.log(email, password);
 
 
 
@@ -33,6 +56,8 @@ const Login = () => {
             .catch(error => {
                 console.error(error)
             })
+
+
     }
     return (
         <>
@@ -63,8 +88,17 @@ const Login = () => {
                                 <button className="btn btn-primary">Login</button>
 
                                 <p>if you do not have an account?<Link to='/register'>Register</Link></p>
+
                             </div>
                         </form>
+                        {/* google login */}
+                        <div className="form-control mt-6">
+                            <button onClick={handleGoogleSignIn} className="btn btn-primary">login with google</button>
+                        </div>
+                        <div>
+                            <button onClick={handleGithubSignIn} className="btn btn-primary mt-5">login with github</button>
+
+                        </div>
                     </div>
                 </div>
             </div>

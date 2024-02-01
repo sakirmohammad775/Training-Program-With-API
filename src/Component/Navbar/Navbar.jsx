@@ -17,14 +17,14 @@ const Navbar = () => {
     const navLink=<>
         <li className="li"><NavLink to='/'>Home</NavLink></li>
         <li className="li"><NavLink to='/portfolio'>Portfolio</NavLink></li>
-        <li className="li"><NavLink>Services</NavLink></li>
-        <li className="li"><NavLink>Blogs</NavLink></li>
-        <li className="li"><NavLink>Contact</NavLink></li>
+        <li className="li"><NavLink to='/services'>Services</NavLink></li>
+        <li className="li"><NavLink to='/blogs'>Blogs</NavLink></li>
+        <li className="li"><NavLink to='/contact'>Contact</NavLink></li>
     </>
     
     return (
         <>
-            <div className="navbar static ">
+            <div className="navbar ">
                 <div className="navbar-start">
                     
                     <Link to='/' className="btn btn-ghost text-3xl">S<span className="text-red-500">M</span></Link>
@@ -36,7 +36,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user? <button onClick={handleLogOut}>SignOut</button>:<Link to='/login' className="btn btn-ghost">Login</Link>
+                        user?
+                         <button onClick={handleLogOut}>SignOut</button>:
+
+                         <Link to='/login' className="btn btn-ghost">Login</Link>
                     }
                 </div>
                 <div className="dropdown">

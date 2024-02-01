@@ -3,7 +3,7 @@
 const Slider = () => {
     return (
         <>
-            <div className="carousel w-full">
+            {/* <div className="carousel w-full">
                 <div id="slide1" className="carousel-item relative w-full">
                     <img src="https://daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg" className="w-full" />
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -32,7 +32,29 @@ const Slider = () => {
                         <a href="#slide1" className="btn btn-circle">❯</a>
                     </div>
                 </div>
-            </div></>
+            </div> */}
+            <div className="swiper-container parallax-slider swiper-container-initialized swiper-container-horizontal">
+                <div className="swiper-wrapper" style={{ transitionDuration: '0ms', transform: 'translate3d(-3052px, 0px, 0px)' }}>
+                    <div className="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style={{ width: '1526px' }}>
+                        {/* ... Content for the first slide ... */}
+                    </div>
+                    <div className="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style={{ width: '1526px' }}>
+                        {/* ... Content for the second slide ... */}
+                    </div>
+                    <div className="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style={{ width: '1526px' }}>
+                        {/* ... Content for the third slide ... */}
+                    </div>
+                    <div className="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style={{ width: '1526px' }}>
+                        {/* ... Content for the fourth slide ... */}
+                    </div>
+                    <div className="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style={{ width: '1526px' }}>
+                        {/* ... Content for the fifth slide ... */}
+                    </div>
+                </div>
+                <span className="swiper-notification" aria-live="assertive" aria-atomic="true"></span>
+            </div>
+
+        </>
     );
 };
 
